@@ -39,24 +39,43 @@ body {
 </style>
 </head>
 <body>
-
+{% block home %}
 <div class="topnav">
-  <a class="navbar-brand" href="/home">Home</a>
+    <a class="navbar-brand" href="/home">Home</a>
+      {%block register%}
+      <div class="topnav-right">
 
-  <div class="topnav-right">
-      <a href="/accounts/register">Register</a>
-  </div>
+      <a href="/accounts/register"> <span class="glyphicon glyphicon-user"></span> Register</a></div> </div>
+      {%endblock%}
+
+{% endblock%}
+
+    {%block logout%}
+<div class="topnav">
+    <a class="navbar-brand" href="/home">Home</a>
+    <div class="topnav-right">
+      <a href="/accounts/logout">Logout</a>
+
 </div>
+    {%endblock%}
+
+
+
+</div>
+
      {% block head %}
     <title>Welcome</title>
     {% endblock %}
 </head>
 
+
+
+
 <body>
  {% block body %}
  {% endblock %}
+
 </body>
 </html>
-
 
 

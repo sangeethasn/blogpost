@@ -24,7 +24,8 @@ urlpatterns = [
     #path('admin/', admin.site.urls),
     url(r'^$',views.login_redirect, name='login_redirect'),
     url(r'^admin/',admin.site.urls),
-    url(r'^accounts/',include('accounts.urls')),
-    url(r'^home$',views.login_redirect, name='login_redirect'),
+    url(r'^accounts/',include(('accounts.urls','accounts'),namespace='accounts')),
+    url(r'^home/',include(('home.urls','home'),namespace='home')),
+
     #url(r'^register',views.register ),
 ]

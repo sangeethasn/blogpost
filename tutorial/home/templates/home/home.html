@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+<html lang="en">
+
+<body>
+
+    {% block body %}
+    <div class="container">
+          <h1>Home</h1>
+          <form method="post">
+             {% csrf_token %}
+             {{ form.as_p}}
+
+          <button type="submit">Submit </button>
+          </form>
+        <h2>{{ text }}</h2>
+        {%for post in posts %}
+        <h1>{{ post.post }}</h1>
+        <p>Posted by {{ post.user}} on {{ post.date}}</p>
+        {% endfor %}
+    </div>
+
+
+
+<!--<a href="http://127.0.0.1:8000/">
+   <input type="button" value="Logout" />
+</a>-->
+     <!--<button type="submit" href='/accounts/logout' class="btn btn-outline-primary">Logout</button>-->
+    {% endblock %}
+
+</body>
+
+</html>
+
+{%block home%}
+{%endblock%}
